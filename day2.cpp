@@ -127,7 +127,7 @@ int LongestSubsetWithZeroSum(vector < int > arr) {
 }
 
 //6
-ode *findMiddle(Node *head) {
+node *findMiddle(Node *head) {
    Node*slow=head;
     Node*fast=head;
     while(fast!=NULL && fast->next!=NULL){
@@ -135,4 +135,32 @@ ode *findMiddle(Node *head) {
         slow=slow->next;
     }
     return slow;
+}
+
+//7
+int findIntersection(Node *firstHead, Node *secondHead)
+{
+    Node*temp=firstHead;
+    Node*temp1=secondHead;
+    while(temp!=temp1){
+        if(temp==NULL){
+            temp=secondHead;
+        }
+        else{
+            temp=temp->next;
+        }
+        if(temp1==NULL){
+            temp1=firstHead;
+        }
+        else{
+            temp1=temp1->next;
+        }
+        
+    }
+    if(temp==NULL){
+            return -1;
+        }
+        else{
+            return temp->data;
+        }
 }
